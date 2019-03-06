@@ -21,21 +21,22 @@ public class Deck {
    			//add a new TwentyOneCard to the deck
     public Deck(){
         cards = new ArrayList<Card>();
-        top = 51;
+        this.top = 51;
         for(int i = 0; i < SUITS.length; i++){
             for(int j = 1; j <= 13; j++){
                 Card a = new Card(SUITS[i], j);
                 System.out.println(a);
             }
         }
+        //Card BlackJackCard = new Card("BlackJackCard");
     }
    	
 
    
    //make a dealCard() method that returns the top card
    public static Card dealCard(){
-        Card a = new Card();
-        return a;
+        //Card a = new Card(top, );
+        return ;
    }
    //write a shuffle() method
    	//use Colletions.shuffle
