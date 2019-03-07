@@ -1,6 +1,7 @@
 package elevenslab;
 
 import java.util.ArrayList;
+import java.util.Collections;
 /**
  *
  * @author liuc5363
@@ -22,23 +23,27 @@ public class Deck {
     public Deck(){
         cards = new ArrayList<Card>();
         this.top = 51;
-        for(int i = 0; i < SUITS.length; i++){
-            for(int j = 1; j <= 13; j++){
-                Card a = new Card(SUITS[i], j);
-                System.out.println(a);
+        for(String m: SUITS){
+            for(int i = 1; i < 14; i++){
+                cards.add(new BlackJackCard(m,i));
             }
         }
-        //Card BlackJackCard = new Card("BlackJackCard");
+        
     }
    	
 
    
    //make a dealCard() method that returns the top card
-   public static Card dealCard(){
-        //Card a = new Card(top, );
-        return ;
+   public String dealCard(){
+        int x = top;
+        top--;
+        return cards.get(x).toString();
    }
    //write a shuffle() method
    	//use Colletions.shuffle
    	//reset the top card 
+   public void shuffle(){
+       Collections.shuffle(cards);
+       top = 51;
+   }
 }
